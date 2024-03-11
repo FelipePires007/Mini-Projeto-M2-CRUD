@@ -2,51 +2,56 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Cadastre Pessoas</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Pessoas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
   <div class="container">
     <div class="header">
-        <samp>Cadastro de Pessoas</samp>
-        <button onclick="openModal()" id="new">incluir</button>
+      <span>Cadastro de Pessoas</span>
+      <button onclick="openModal()" id="new">Incluir</i></button>
     </div>
 
-    <div class="divtable">
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Gênero</th>
-                    <th>Idade</th>
-                    <th class="ação">Editar</th>
-                    <th class="ação">Excluir</th>
-                </tr>
-            </thead>
-        </table>
+    <div class="divTable">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Gênero</th>
+            <th>Idade</th>
+            <th class="acao">Editar</th>
+            <th class="acao">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
     </div>
 
     <div class="modal-container">
-        <div class="modal">
-            <form>
-                <label for="nome">Nome</label>
-                <input id="nome" type="text" required>
-
-                <label for="genero">Gênero</label>
-                <input id="genero"  type="text" required>
-
-                <label for="idade">Idade</label>
-                <input id="idade" type="number" required>
-                <button id="btnsalvar">Salvar</button>
-            </form>
-        </div>
+      <div class="modal">
+        <form>
+          <label for="m-nome">Nome</label>
+          <input id="m-nome" type="text" required />
+  
+          <label for="m-genero">Gênero</label>
+          <input id="m-genero" type="text" required />
+  
+          <label for="m-idade">Idade</label>
+          <input id="m-idade" type="number" required />
+          <button id="btnSalvar">Salvar</button>
+        </form>
+      </div>
     </div>
 
   </div>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

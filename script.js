@@ -1,8 +1,8 @@
 const modal = document.querySelector('.modal-container')
 const tbody = document.querySelector('tbody')
-const nome = document.querySelector('#nome')
-const genero = document.querySelector('#genero')
-const idade = document.querySelector('#idade')
+const sNome = document.querySelector('#m-nome')
+const sGenero = document.querySelector('#m-genero')
+const sIdade = document.querySelector('#m-idade')
 const btnSalvar = document.querySelector('#btnSalvar')
 
 let itens
@@ -18,14 +18,14 @@ function openModal(edit = false, index = 0) {
   }
 
   if (edit) {
-    nome.value = itens[index].nome
-    genero.value = itens[index].genero
-    idade.value = itens[index].idade
+    sNome.value = itens[index].nome
+    sGenero.value = itens[index].genero
+    sIdade.value = itens[index].idade
     id = index
   } else {
-    nome.value = ''
-    genero.value = ''
-    idade.value = ''
+    sNome.value = ''
+    sGenero.value = ''
+    sIdade.value = ''
   }
   
 }
@@ -47,7 +47,7 @@ function insertItem(item, index) {
   tr.innerHTML = `
     <td>${item.nome}</td>
     <td>${item.genero}</td>
-    <td>R$ ${item.idade}</td>
+    <td>${item.idade}</td>
     <td class="acao">
       <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
     </td>
@@ -60,18 +60,18 @@ function insertItem(item, index) {
 
 btnSalvar.onclick = e => {
   
-  if (nome.value == '' || genero.value == '' || idade.value == '') {
+  if (sNome.value == '' || sGenero.value == '' || sIdade.value == '') {
     return
   }
 
   e.preventDefault();
 
   if (id !== undefined) {
-    itens[id].nome = nome.value
-    itens[id].genero = genero.value
-    itens[id].idade = idade.value
+    itens[id].nome = sNome.value
+    itens[id].genero = sGenero.value
+    itens[id].idade = sIdade.value
   } else {
-    itens.push({'nome': nome.value, 'genero': genero.value, 'idade': idade.value})
+    itens.push({'nome': sNome.value, 'genero': sGenero.value, 'idade': sIdade.value})
   }
 
   setItensBD()
